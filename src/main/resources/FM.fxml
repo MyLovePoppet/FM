@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FMController">
+   <center>
+      <ListView fx:id="radioListView" prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="600.0">
+            <Button mnemonicParsing="false" onAction="#prev" prefHeight="32.0" prefWidth="32.0" style="-fx-background-image: url('prev.png');" />
+            <Button fx:id="play" mnemonicParsing="false" onAction="#playOrPause" prefHeight="32.0" prefWidth="32.0" style="-fx-background-image: url('pause.png');" />
+            <Button mnemonicParsing="false" onAction="#next" prefHeight="32.0" prefWidth="32.0" style="-fx-background-image: url('next.png');" />
+         </HBox>
+         <Label fx:id="statusLabel" alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="600.0" text="正在播放..." />
+      </VBox>
+   </bottom>
+</BorderPane>
