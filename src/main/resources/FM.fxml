@@ -10,7 +10,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FMController">
    <top>
-      <Slider fx:id="volumeSlide" max="1.0" onDragDetected="#changeVolume" value="0.8" BorderPane.alignment="CENTER" />
+      <Slider fx:id="volumeSlide" max="1.0" onDragDone="#changeVolume" value="0.8" BorderPane.alignment="CENTER" />
    </top>
    <center>
       <ListView fx:id="radioListView" prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
