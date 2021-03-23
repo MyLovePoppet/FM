@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +50,8 @@ public class FMController implements Initializable {
     private Button play;
     @FXML
     private Label statusLabel;
-
+    @FXML
+    private Slider volumeSlide;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -214,5 +216,13 @@ public class FMController implements Initializable {
             currentSelectedIndex = 0;
         }
         updateMedia();
+    }
+
+    public void changeVolume() {
+        if (mediaPlayer != null) {
+            double volume = volumeSlide.getValue();
+            log.info("设置声音[" + volume + "]...");
+            mediaPlayer.setVolume(volume);
+        }
     }
 }
