@@ -1,6 +1,6 @@
-[![6ZlaIP.png](https://s3.ax1x.com/2021/03/04/6ZlaIP.png)](https://imgtu.com/i/6ZlaIP)
+[![67SbA1.png](https://z3.ax1x.com/2021/03/23/67SbA1.png)](https://imgtu.com/i/67SbA1)
 
-release下载地址：https://github.com/MyLovePoppet/FM/releases/download/1.0/FM.jar
+release下载地址：https://github.com/MyLovePoppet/FM/releases/download/1.1/FM.jar
 
 使用方式：
 ```shell script
