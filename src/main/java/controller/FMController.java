@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.media.Media;
+import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaPlayer;
 import lombok.extern.slf4j.Slf4j;
 
@@ -140,8 +141,22 @@ public class FMController implements Initializable {
             mediaPlayer.dispose();
         }
         mediaPlayer = new MediaPlayer(media);
+        //重新设置声音大小
+        mediaPlayer.setVolume(volumeSlide.getValue());
         mediaPlayer.play();
-
+        //播放错误提示
+        mediaPlayer.setOnError(() -> {
+            MediaException error = mediaPlayer.getError();
+            if (error != null) {
+                String errorMsg = "播放出现错误[" + error.getMessage() + "]...";
+                log.error(errorMsg);
+                //控件显示
+                Platform.runLater(() -> {
+                    statusLabel.setText(errorMsg);
+                    isPlaying = false;
+                });
+            }
+        });
         play.setStyle("-fx-background-image: url('play.png');");
         isPlaying = true;
     }
@@ -188,6 +203,10 @@ public class FMController implements Initializable {
     }
 
     public void playOrPause() {
+        //防止NPE
+        if (mediaPlayer == null) {
+            return;
+        }
         if (isPlaying) {
             mediaPlayer.pause();
             play.setStyle("-fx-background-image: url('pause.png');");
@@ -198,7 +217,6 @@ public class FMController implements Initializable {
             play.setStyle("-fx-background-image: url('play.png');");
             isPlaying = true;
             statusLabel.setText("正在播放：" + radioItems.get(currentSelectedIndex).getTitle() + "...");
-
         }
     }
 
