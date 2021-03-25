@@ -1,6 +1,9 @@
+CNR MusicRadio示例播放地址：https://service-hjj4yf4e-1300281188.gz.apigw.tencentcs.com/release/cnr_music_radio
+
+
 [![67SbA1.png](https://z3.ax1x.com/2021/03/23/67SbA1.png)](https://imgtu.com/i/67SbA1)
 
-release下载地址：https://github.com/MyLovePoppet/FM/releases/download/1.1/FM.jar
+release下载地址：https://github.com/MyLovePoppet/FM/releases/download/1.2/FM.jar
 
 使用方式：
 ```shell script
